@@ -1,0 +1,139 @@
+.scroll-section {
+  height: 200vh;
+  position: relative;
+  background: #121212;
+}
+
+.scroll-track {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d1d1d1;
+  overflow: hidden;
+}
+
+.road {
+  width: 120vw;
+  height: clamp(140px, 22vw, 200px);
+  background-color: #1e1e1e;
+  position: relative;
+  overflow: hidden;
+}
+
+.car {
+  height: 100%;
+  width: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  will-change: transform;
+}
+
+.trail {
+  height: 100%;
+  background: #45db7d;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 0;
+  pointer-events: none;
+}
+
+.value-add {
+  position: absolute;
+  top: 20%;
+  left: 2%;
+  z-index: 5;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.3rem;
+  font-size: clamp(2.25rem, 11vw, 8rem);
+  font-weight: 700;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.value-letter {
+  color: #111;
+  opacity: 0;
+}
+
+.stat-card {
+  opacity: 0;
+  padding: 1.875rem;
+  border-radius: 10px;
+  margin: 1rem;
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5px;
+  max-width: min(320px, 42vw);
+  font-size: clamp(0.875rem, 1.6vw, 1.125rem);
+  line-height: 1.35;
+}
+
+.stat-card__value {
+  font-size: clamp(2rem, 5vw, 3.625rem);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.stat-card--lime {
+  background: #def54f;
+  color: #111;
+}
+
+.stat-card--sky {
+  background: #6ac9ff;
+  color: #111;
+}
+
+.stat-card--dark {
+  background: #333;
+  color: #fff;
+}
+
+.stat-card--orange {
+  background: #fa7328;
+  color: #111;
+}
+
+@media (max-width: 768px) {
+  .stat-card {
+    padding: 1rem 1.125rem;
+    margin: 0.5rem;
+    max-width: min(280px, 46vw);
+  }
+
+  .value-add {
+    left: 3%;
+    top: 28%;
+    gap: 0.15rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-card {
+    max-width: 48vw;
+    padding: 0.75rem;
+  }
+
+  .stat-card__value {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .car {
+    will-change: auto;
+  }
+}
