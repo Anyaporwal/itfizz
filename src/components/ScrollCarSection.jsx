@@ -100,15 +100,19 @@ function ScrollCarSection() {
     >
       <div ref={trackRef} className="scroll-track">
         <div className="road" id="road">
-          <img
-            ref={carRef}
-            src="/mclaren-top-view.png"
-            alt=""
-            className="car"
-            id="car"
-            decoding="async"
-            onLoad={handleCarLoad}
-          />
+          
+    <img
+      ref={carRef}
+      src={`${import.meta.env.BASE_URL}mclaren-top-view.png`}
+      alt=""
+      className="car"
+      id="car"
+      decoding="async"
+      onLoad={handleCarLoad}
+      onError={(e) => console.error('Car image failed to load:', e.currentTarget.src)}
+    />
+
+           
 
           <div
             ref={trailRef}
